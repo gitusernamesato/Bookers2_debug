@@ -1,3 +1,6 @@
-  $(".comments").html("<%= j(render 'books/comments', comments: @comments) %>");
-  $('textarea').val('');
-  $(".comment_form").html("<%= j(render 'book_comments/comment_form', {book: @book, book_comment: @book_comment}) %>");
+   $(".counter").html("<%= j(render 'books/comment_counter', {comments: @comments}) %>");
+
+   $(".comments").html("<%= j(render 'books/comments', comments: @comments) %>");
+   $('textarea').val('');
+
+   $(".comment_form").html("<%= j(render 'book_comments/comment_form', {book: @book, book_comment: @book_comment}) %>");
