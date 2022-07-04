@@ -1,8 +1,14 @@
 Rails.application.routes.draw do
+ 
+  devise_for :users
+  resources :groups, except: [:destroy] do
+  get "join" => "groups/join"
+  get "leave" => "groups/leave"
+  end
   get 'relationships/followers'
   get 'relationships/followings'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  devise_for :users
+
   root to: "homes#top"
   get "home/about"=>"homes#about"
   get "search" => "searches#search"
