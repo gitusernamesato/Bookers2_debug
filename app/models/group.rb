@@ -1,7 +1,7 @@
 class Group < ApplicationRecord
   has_one_attached :group_image
 
-  has_many :group_users, foreign_key: "user_id", dependent: :destroy
+  has_many :group_users, foreign_key: "group_id", dependent: :destroy
   has_many :users, through: :group_users
 
   # has_many :belonged_groups, class_name: "GroupUser", foreign_key: "group_id", dependent: :destroy

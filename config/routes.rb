@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
- 
+
   devise_for :users
   resources :groups, except: [:destroy] do
-  get "join" => "groups/join"
-  get "leave" => "groups/leave"
+    get "join" => "groups#join"
+    get "leave" => "groups#leave"
   end
   get 'relationships/followers'
   get 'relationships/followings'
