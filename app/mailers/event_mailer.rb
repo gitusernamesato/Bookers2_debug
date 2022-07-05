@@ -1,12 +1,7 @@
 class EventMailer < ApplicationMailer
-  default from: 'noreply@example.com'
-  default to: 'admin@example.com'
-  layout 'mailer'
-
-  def send_mail(event)
-    @event = event
-    mail(from: event.email, to: ENV['MAIL_ADDRESS'], subject: 'New Event') do |format|
-      format.text
-    end
+  def send_mail(mail_title,mail_content,group_users) #メソッドに対して引数を設定
+    @mail_title = mail_title
+    @mail_content = mail_content
+    mail bcc: group_users.pluck(:email), subject: mail_title
   end
 end
