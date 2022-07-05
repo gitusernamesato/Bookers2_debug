@@ -17,6 +17,9 @@ class User < ApplicationRecord
   validates :name, length: { in: 2..20 }, uniqueness: true
   validates :introduction, length: { maximum: 50 }
 
+  has_many :group_users, foreign_key: "user_id", dependent: :destroy
+  has_many :groups, through: :group_users
+
   # def get_profile_image
   #   (profile_image.attached?) ? profile_image : 'no_image.jpg'
   # end
