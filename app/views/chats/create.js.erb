@@ -1,4 +1,2 @@
-$(".messages").html("<%= j(render 'chats/messages', {chats: @chats}) %>");
-
-$(".chat_form").html("<%= j(render 'chats/chat_form', {chat: @chat}) %>");
-$('textarea').val('');
+$('.message').append("<p style='text-align: right;'><%= @chat.message %></p>");
+$('input[type=text]').val("")

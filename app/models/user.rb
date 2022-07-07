@@ -17,11 +17,12 @@ class User < ApplicationRecord
   validates :name, length: { in: 2..20 }, uniqueness: true
   validates :introduction, length: { maximum: 50 }
 
-  has_many :user_rooms, foreign_key: "room_id", dependent: :destroy
-  has_many :chats, foreign_key: "room_id", dependent: :destroy
-  has_many :rooms, through: :chats
-  
+  has_many :user_rooms
+  has_many :chats
+  has_many :rooms, through: :user_rooms
 
+  has_many :view_counts, dependent: :destroy
+  
   # def get_profile_image
   #   (profile_image.attached?) ? profile_image : 'no_image.jpg'
   # end

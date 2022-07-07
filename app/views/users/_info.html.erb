@@ -30,7 +30,7 @@
     <div class="mr-3">
     <%= render 'relationships/follow-btn',user: user %>
     </div>
-    <%= render 'chats/new_chat',user: user %>
+    <%= link_to 'chatを始める', chat_path(user.id), class: "ml-3" %>
    </div>
   <% end %>
 <div class='row'>
