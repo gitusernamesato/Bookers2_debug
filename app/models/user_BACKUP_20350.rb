@@ -17,18 +17,18 @@ class User < ApplicationRecord
   validates :name, length: { in: 2..20 }, uniqueness: true
   validates :introduction, length: { maximum: 50 }
 
-
+<<<<<<< HEAD
   has_many :group_users, foreign_key: "user_id", dependent: :destroy
   has_many :groups, through: :group_users
 
-
+=======
   has_many :user_rooms
   has_many :chats
   has_many :rooms, through: :user_rooms
 
   has_many :view_counts, dependent: :destroy
   
-
+>>>>>>> SNS
   # def get_profile_image
   #   (profile_image.attached?) ? profile_image : 'no_image.jpg'
   # end

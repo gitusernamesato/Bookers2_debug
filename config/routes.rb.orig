@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-
+<<<<<<< HEAD
 
   devise_for :users
   resources :groups do
@@ -8,8 +8,8 @@ Rails.application.routes.draw do
     get "new/mail" => "groups#new_mail"
     get "send/mail" => "groups#send_mail"
   end
-
-
+=======
+  devise_for :users
   root to: "homes#top"
   
 >>>>>>> SNS
@@ -17,12 +17,12 @@ Rails.application.routes.draw do
   get 'relationships/followings'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
-
-
+<<<<<<< HEAD
+  root to: "homes#top"
   get "home/about" => "homes#about"
 =======
   get "home/about"=>"homes#about"
-
+>>>>>>> SNS
   get "search" => "searches#search"
 
   resources :books, only: [:index,:show,:edit,:create,:destroy,:update] do
